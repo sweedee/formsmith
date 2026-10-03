@@ -37,7 +37,7 @@ export function cost(items: Item[], templates: Template[]) {
   visit(items);
   const direct=items.filter(i=>i.kind==='block').length*10;
   const calls=items.filter(i=>i.kind==='instance').length*2;
-  const definitions=[...local].reduce((n,id)=>n+4+(templates.find(t=>t.id===id)?.items.length??0)*2,0);
+  const definitions=[...local].reduce((n,id)=>n+8+(templates.find(t=>t.id===id)?.items.length??0)*2,0);
   return {direct,calls,definitions,total:direct+calls+definitions,local};
 }
 export const levels: {name:string;target:Point[];hint:string}[] = [
@@ -46,3 +46,4 @@ export const levels: {name:string;target:Point[];hint:string}[] = [
   {name:'03 · Twin gates',target:[0,5].flatMap(x=>[[x,0,0],[x,1,0],[x,2,0],[x+1,2,0],[x+2,2,0],[x+2,1,0],[x+2,0,0]] as Point[]),hint:'Two objects share the same structure. Reuse a gate template.'},
   {name:'04 · Spiral',target:Array.from({length:8},(_,y)=>transform([2,0,0],[0,y,0],y)),hint:'Eight floating steps around an axis. Rotate sockets to rotate their input.'}
 ];
+

@@ -1,1 +1,1 @@
-{"compilerOptions":{"target":"ES2022","module":"ESNext","moduleResolution":"Bundler","strict":true,"skipLibCheck":true,"lib":["ES2022","DOM"],"allowImportingTsExtensions":true,"noEmit":true},"include":["src/model.ts","src/main.ts"]}
+{"compilerOptions":{"target":"ES2023","module":"ESNext","moduleResolution":"Bundler","strict":true,"skipLibCheck":true,"lib":["ES2023","DOM"],"allowImportingTsExtensions":true,"noEmit":true},"include":["src/model.ts","src/main.ts"]}
