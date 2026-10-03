@@ -28,3 +28,8 @@ Focused evaluator checks for translations, rotations, fixed blocks, nesting, ove
 
 ## Deferred
 Conditions/filter, running transformations/reduce, numeric input ports, multiplayer, accounts, cloud saves, cost medals and advanced materials.
+
+## First prototype checkpoint (2026-10-03)
+Foundation, direct construction, spatial templates, nesting, local/global library persistence, cost breakdown and four small targets are implemented. GitHub Pages is live at https://sweedee.github.io/formsmith/ . Six evaluator tests and the production build pass. On the deployed build, manual column construction completed at cost 30, survived reload, and a three-socket template completed it at cost 16. Block placement, undo, template creation and socket placement were verified through browser interactions.
+
+This is the initial playtest pass, not a polished completion of every milestone: controls remain in a side panel, workspaces use grids rather than finished physical workbenches, and slice inspection is pending. Next checkpoint should respond to user feedback about placement, camera controls, origins and template composition before extending mechanics.
