@@ -9,9 +9,11 @@ Use Node.js 24 or newer. Run `npm install`, then `npm run dev`.
 
 ## Play
 
-Recreate the target on the left in the construction area on the right. Left-click a block face or the build plane to place; Shift-click or right-click removes a source placement. Drag to orbit, middle-drag to pan, scroll to zoom. Adjust the build plane to place floating blocks. Missing voxels are blue wireframes; extras are red.
+Recreate the target on the left in the construction area on the right. Choose Block, Socket, Stamp or Erase from the left tool rail (keys 1–4). Left-click a face to build; Shift-click or right-click removes a source placement. Drag to orbit, middle-drag to pan, scroll to zoom. Missing voxels are blue wireframes; extras are red. Choose levels from the commission button at the top, or use the previous/next arrows. Progress is displayed above the scene.
 
-Create a named template, place input sockets or fixed blocks on its workbench, and switch back to construction to place template instances. Instance shape selects the template to place; shape input selects what fills its sockets. Rotations are quarter turns around the vertical axis. Shape origins are the grid axes. Editing templates updates their instances. Undo/redo applies to construction and library changes.
+Choose **Anywhere in 3D** (G) to place floating or overlapping shapes. Drag the red/green/blue cursor handles, click the horizontal plane, or enter X/Y/Z coordinates. Press **Place at cursor** or Enter to place. Arrow keys move X/Z; Page Up/Down move Y. Clicks in this mode position the cursor instead of committing a placement. Occupied positions are allowed. In face mode, Alt-click a shape to overlap a new placement at its source anchor.
+
+Create a named template using **New template**, place input sockets or fixed blocks on its workbench, then choose **Back to level**. The asset shelf displays previews of evaluated shapes. Click an asset to stamp it; choose **Edit shape** to edit its definition. The contextual **Shape input** button opens a visual picker for what fills sockets. Rotate with the rotation button or R. Shape origins are the grid axes. Editing templates updates their instances and asset thumbnails. Undo/redo applies to construction and library changes.
 
 Libraries and the active build save in this browser. Export/import provides portable library backups; import replaces the library and clears the active construction (undo restores it).
 
@@ -23,4 +25,4 @@ The Pages workflow tests and builds pushes to main, then publishes the static ar
 
 ## Current limits
 
-Controls are designed for desktop mouse/keyboard. Template controls currently use a side panel; moving them onto 3D workbenches is a later interaction pass. No slicing view or running transformations yet. Outputs are capped at 20,000 voxels. Removing a generated voxel removes its whole source instance. Global shapes persist locally rather than in an account.
+Controls are designed for desktop mouse/keyboard. Workbenches use spatial grids with screen-based tool controls; fully world-embedded controls remain a later interaction pass. No slicing view or running transformations yet. Outputs are capped at 20,000 voxels. Removing a generated voxel removes its whole source instance. Global shapes persist locally rather than in an account.

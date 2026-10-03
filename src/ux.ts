@@ -82,6 +82,7 @@ export function installUX(options: Options) {
     el('commission-name').textContent = levels[level].name; el<HTMLButtonElement>('previous').disabled = level === 0; el<HTMLButtonElement>('next').disabled = level === levels.length - 1;
     el('workspace-type').textContent = editing() ? 'TEMPLATE WORKBENCH' : 'LEVEL WORKSPACE';
     el('back').hidden = !editing(); el('rename-shape').hidden = !editing(); el('preview').hidden = !editing(); el('diff').hidden = editing();
+    document.querySelector<HTMLElement>('.cost-pill small')!.textContent = editing() ? 'TEMPLATE DEFINITION' : 'SOLUTION COST';
     document.querySelector<HTMLElement>('.target-label')!.hidden = editing();
     el('surface').setAttribute('aria-pressed', String(!free)); el('free').setAttribute('aria-pressed', String(free)); el('cursor-controls').hidden = !free;
     el('placement-help').textContent = erase ? 'Click a placement to erase it. A stamp is removed as a whole.' : free ? 'Drag the colored handles or click the plane. Press Place to stamp.' : 'Click a face to build. Alt-click overlaps at the source anchor.';
