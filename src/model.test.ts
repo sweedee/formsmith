@@ -12,5 +12,11 @@ test('shape sockets substitute nested inputs and deduplicate overlap',()=>{
 test('fixed blocks do not substitute the input',()=>assert.equal(evaluate([{kind:'block',position:[0,0,0],turn:0},socket(2)],[],[[0,0,0],[0,1,0]]).length,3));
 test('cycles are rejected',()=>assert.throws(()=>evaluate([{kind:'instance',template:'a',position:[0,0,0],turn:0}],[{id:'a',name:'A',items:[{kind:'instance',template:'a',position:[0,0,0],turn:0}]}]),/Circular/));
 test('diff distinguishes missing, extra and correct voxels',()=>assert.deepEqual(compare([[0,0,0],[1,0,0]],[[0,0,0],[0,1,0]]),{missing:[[0,1,0]],extra:[[1,0,0]],correct:[[0,0,0]]}));
+test('intentional overlapping stamps retain both recipe calls but occupy each voxel once',()=>{
+ const stamp:Item={kind:'instance',template:'line',position:[0,0,0],turn:0};
+ const recipe=[stamp,{...stamp,turn:1}];
+ assert.equal(recipe.length,2);assert.equal(evaluate(recipe,[line]).length,3);
+ assert.equal(cost(recipe,[line]).calls,4);assert.equal(cost(recipe,[line]).definitions,14);
+});
 test('local definitions are charged once and one socket is more expensive than one block',()=>{const i:Item={kind:'instance',template:'line',position:[0,0,0],turn:0};assert.equal(cost([i,i],[line]).total,18);assert.equal(cost([i],[line]).total,16);const single={...line,items:[socket(0)]};assert(cost([i],[single]).total>cost([{kind:'block',position:[0,0,0],turn:0}],[]).total);});
 
